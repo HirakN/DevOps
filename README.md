@@ -13,7 +13,7 @@ To begin, download the following programs and install them:
 Virtual Box is used to provide the vitual machine environment and vagrant will be used to get the functionality without the clutter.
 
 ### Source files
-Clone the repository to obtain the necessary files. This can be done throught the CLI by:
+Clone the repository to obtain the necessary files. This can be done through the CLI by:
 
 	git clone git@github.com:HirakN/DevOps.git
 	cd DevOps
@@ -50,7 +50,7 @@ In the VM, enter:
 	# Install the server package
 	sudo apt-get install nginx -y
 	
-The site can be accessed at [http://dev.local/](http://dev.local/)
+The site can then be accessed at [http://dev.local/](http://dev.local/)
 
 ### Shutting down
 
