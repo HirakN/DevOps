@@ -18,18 +18,14 @@ Clone the repository to obtain the necessary files. This can be done through the
 	git clone git@github.com:HirakN/DevOps.git
 	cd DevOps
 
-
 ### Configuration
 The [Vagrantfile](Vagrantfile) contains all the configurations needed for the VM. If any additional tweaking is needed, this is the file to change.
 
 ### Starting the VM
-To start up the machine and access the ubuntu CLI, enter:
-	
-	# Configure the VM to use ubuntu
-	vagrant init ubuntu/xenial64
-	
+To start up the machine and access the ubuntu CLI, enter:	
+
 	# Install a plugin
-	vagrant plugin istall vagrant-hostsupdater
+	vagrant plugin install vagrant-hostsupdater
 	
 	# Start the VM
 	vagrant up
