@@ -6,7 +6,8 @@
 
 To begin, download the following programs and install them:
 
-[Virtual Box](https://www.virtualbox.org/wiki/Downloads)	
+[Virtual Box](https://www.virtualbox.org/wiki/Downloads)
+
 [Vagrant](https://www.vagrantup.com/downloads.html)
 
 Virtual Box is used to provide the vitual machine environment and vagrant will be used to get the functionality without the clutter.
