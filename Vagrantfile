@@ -16,7 +16,7 @@ Vagrant.configure("2") do |config|
   # Synced app folder
   config.vm.synced_folder "app", "/home/ubuntu/app"
 
-  # provisio
+  # provisions
   config.vm.provision "shell", path: "environment/app/provision.sh"
 
 end
