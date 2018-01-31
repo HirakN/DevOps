@@ -9,14 +9,27 @@ end
 
 Vagrant.configure("2") do |config|
 
-  config.vm.box = "ubuntu/xenial64"
-  config.vm.network "private_network", ip: "192.168.10.100"
-  config.hostsupdater.aliases = ["dev.local"]
+	config.vm.define "app" do |app|
+		app.vm.box = "ubuntu/xenial64"
+		app.vm.network "private_network", ip: "192.168.10.100"
+		app.hostsupdater.aliases = ["dev.local"]
 
-  # Synced app folder
-  config.vm.synced_folder "app", "/home/ubuntu/app"
+		# Synced app folder
+		app.vm.synced_folder "app", "/home/ubuntu/app"
 
-  # provisions
-  config.vm.provision "shell", path: "environment/app/provision.sh"
+		# provisions
+		app.vm.provision "shell", path: "environment/app/provision.sh"
+	end
 
+	# Set up secnd box for DB
+	config.vm.define "db" do |db|
+		db.vm.box = "ubuntu/xenial64"
+	    db.vm.network "private_network", ip: "192.168.10.150"
+	    db.hostsupdater.aliases = ["database.local"]
+
+		# Synced folder for db
+	    db.vm.synced_folder "./environment/db/templates", "/home/ubuntu/templates"
+	    
+	    db.vm.provision "shell", path: "environment/db/provision.sh", privileged: false
+	end
 end
