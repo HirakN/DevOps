@@ -15,7 +15,7 @@ Vagrant.configure("2") do |config|
 		app.hostsupdater.aliases = ["dev.local"]
 
 		# Synced app folder
-		app.vm.synced_folder "app", "/home/ubuntu/app"
+		app.vm.synced_folder "./app", "/home/ubuntu/app"
 
 		# provisions
 		app.vm.provision "shell", path: "environment/app/provision.sh"
@@ -29,7 +29,7 @@ Vagrant.configure("2") do |config|
 
 		# Synced folder for db
 	    db.vm.synced_folder "./environment/db/templates", "/home/ubuntu/templates"
-	    
+
 	    db.vm.provision "shell", path: "environment/db/provision.sh", privileged: false
 	end
 end
