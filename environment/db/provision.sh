@@ -31,6 +31,8 @@ sudo cp /home/ubuntu/templates/mongod.service /lib/systemd/system/
 sudo rm /etc/mongod.conf
 sudo cp /home/ubuntu/templates/mongod.conf /etc/
 
+export LC_ALL=C
+
 # Start mongo service
 # sudo service mongod start
 sudo systemctl start mongod

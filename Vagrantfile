@@ -8,9 +8,9 @@ required_plugins.each do |plugin|
 end
 
 Vagrant.configure("2") do |config|
+	config.vm.box = "ubuntu/xenial64"
 
 	config.vm.define "app" do |app|
-		app.vm.box = "ubuntu/xenial64"
 		app.vm.network "private_network", ip: "192.168.10.100"
 		app.hostsupdater.aliases = ["dev.local"]
 
@@ -23,7 +23,6 @@ Vagrant.configure("2") do |config|
 
 	# Set up secnd box for DB
 	config.vm.define "db" do |db|
-		db.vm.box = "ubuntu/xenial64"
 	    db.vm.network "private_network", ip: "192.168.10.150"
 	    db.hostsupdater.aliases = ["database.local"]
 
