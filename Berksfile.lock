@@ -1,0 +1,11 @@
+DEPENDENCIES
+  db
+    git: git@github.com:HirakN/CookbookDB.git
+    revision: 9be31312c404500fa059be561202d1199dde52fc
+  node
+    git: git@github.com:HirakN/NodeCookbook.git
+    revision: 1224bd99b1a4105000417eadae35ded4e6f31731
+
+GRAPH
+  db (0.1.0)
+  node (0.1.0)
