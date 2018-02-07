@@ -20,7 +20,7 @@ Vagrant.configure("2") do |config|
 		end
 
 		# # Synced app folder
-		# app.vm.synced_folder "./app", "/home/ubuntu/app"
+		app.vm.synced_folder "./app", "/home/ubuntu/app"
 		# app.vm.synced_folder "./environment/app/templates", "/home/ubuntu/templates"
 
 		# # provisions
