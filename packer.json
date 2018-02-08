@@ -7,7 +7,7 @@
     "type": "amazon-ebs",
     "access_key": "{{user `aws_access_key`}}",
     "secret_key": "{{user `aws_secret_key`}}",
-    "region": "eu-west-1",
+    "region": "eu-central-1",
     "source_ami_filter": {
       "filters": {
       "virtualization-type": "hvm",
@@ -23,13 +23,9 @@
   }],
   "provisioners": [
     {
-      "type": "shell",
-      "inline": ["mkdir /home/ubuntu/app"]
-    },
-    {
       "type": "file",
       "source": "app",
-      "destination": "/home/ubuntu/app"
+      "destination": "/home/ubuntu"
     },
     {
       "type": "chef-solo",
